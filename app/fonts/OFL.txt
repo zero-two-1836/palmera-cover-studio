@@ -1,0 +1,15 @@
+The two font files in this directory are part of the Noto Sans family:
+
+  NotoSans-CondensedBold.ttf
+  NotoSans-ExtraCondensedBlack.ttf
+
+Copyright 2015-2020 Google LLC. Noto is a trademark of Google LLC.
+
+Both files are licensed under the SIL Open Font License, Version 1.1,
+which allows them to be used, studied, modified and redistributed —
+including bundled with an application, as here — provided they are not
+sold on their own and this copyright notice is kept with them.
+
+The full license text is published by SIL International at
+https://openfontlicense.org and in the Noto project repository at
+https://github.com/notofonts/noto-fonts under OFL.txt.
