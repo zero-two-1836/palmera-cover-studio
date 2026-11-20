@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palmera Cover Studio — GTA-style cover maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="mark" aria-hidden="true">P</div>
+  <h1>Palmera Cover Studio</h1>
+  <p class="tagline">Your photo + a caption → cover art in the style of GTA 6's posters.</p>
+  <div class="spacer"></div>
+  <span id="sizeReadout" class="size-readout">1080 × 1350 PNG</span>
+  <button id="exportBtn" class="export-btn" type="button">Export PNG</button>
+</header>
+
+<main class="workspace">
+  <aside class="rail">
+    <section class="card">
+      <h2>Cover text</h2>
+      <label class="field">
+        <span>Title</span>
+        <input id="titleInput" type="text" maxlength="42" value="Neon Shores" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>Tagline</span>
+        <input id="taglineInput" type="text" maxlength="60" value="One last ride down the coast." autocomplete="off">
+      </label>
+      <div class="checks">
+        <label><input id="badgeCheck" type="checkbox" checked> Age badge</label>
+        <label><input id="barcodeCheck" type="checkbox" checked> Barcode &amp; issue mark</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Layout · Post size</h2>
+      <div id="layoutChips" class="chips" role="group" aria-label="Layout"></div>
+      <div id="sizeChips" class="chips" role="group" aria-label="Post size"></div>
+    </section>
+
+    <section class="card">
+      <h2>Panels</h2>
+      <div id="panelChips" class="chips" role="group" aria-label="Choose a panel to edit"></div>
+      <label class="field">
+        <span>Panel fill</span>
+        <select id="fillSelect"></select>
+      </label>
+      <label class="field">
+        <span>Colour grade</span>
+        <select id="gradeSelect"></select>
+      </label>
+      <label class="slider">
+        <span>Focus left–right</span>
+        <input id="focusX" type="range" min="0" max="100" value="50">
+        <output id="focusXOut">50%</output>
+      </label>
+      <label class="slider">
+        <span>Focus up–down</span>
+        <input id="focusY" type="range" min="0" max="100" value="38">
+        <output id="focusYOut">38%</output>
+      </label>
+      <label class="slider">
+        <span>Zoom</span>
+        <input id="zoom" type="range" min="100" max="220" value="100">
+        <output id="zoomOut">1.00×</output>
+      </label>
+      <p class="hint">Tip: drag on the cover itself to frame the selected panel.</p>
+    </section>
+
+    <section class="card">
+      <h2>Photos</h2>
+      <ul id="photoList" class="photo-list"></ul>
+      <label class="add-photo">
+        + Add your photo
+        <input id="photoInput" type="file" accept="image/*" multiple hidden>
+      </label>
+      <p class="hint">Photos are read on your own machine and never uploaded.</p>
+    </section>
+  </aside>
+
+  <section class="stage">
+    <div class="canvas-wrap">
+      <canvas id="stage" width="1080" height="1350"></canvas>
+    </div>
+    <p id="stageCaption" class="stage-caption">Four samples are loaded. Add your own photo, frame the panels, export the PNG.</p>
+  </section>
+</main>
+
+<script type="module" src="src/studio.js"></script>
+</body>
+</html>
